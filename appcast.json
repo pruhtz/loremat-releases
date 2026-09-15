@@ -1,9 +1,9 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.1",
   "published": "2026-09-15",
   "minSystemVersion": "13.0",
-  "download": "https://github.com/pruhtz/loremat-releases/releases/download/v1.7.0/Loremat-1.7.0.dmg",
-  "sha256": "d2c052d76c413176a19841c93df21973088f13b65c13358ad77649ed4736675c",
-  "notes": "### Hinzugefügt\n\n- Menüeintrag „Feedback senden …“: Fenster mit Kategorie (Fehler/Idee/Frage),\n  Nachricht, optionalen Anhängen (System-Info, Diagnose der letzten\n  Einfügung – standardmäßig aus) und Vorschau. „E-Mail-Entwurf öffnen“ legt\n  die Mail im Mail-Programm des Nutzers an; nichts wird im Hintergrund\n  gesendet.\n\n### Geändert\n\n- Installationsanleitung („Bitte lesen.txt“, README) für macOS 15 Sequoia:\n  Gatekeeper lässt sich dort nur noch über Systemeinstellungen → Datenschutz &\n  Sicherheit → „Dennoch öffnen“ passieren, nicht mehr per Rechtsklick → Öffnen.\n\n### Behoben\n\n- Die App ließ sich auf Intel-Macs nicht starten („auf diesem Mac-Typ nicht\n  unterstützt“): Es wurde nur für Apple Silicon kompiliert. `build.sh` baut\n  jetzt ein Universal Binary (arm64 + x86_64).",
-  "notesURL": "https://github.com/pruhtz/loremat-releases/releases/tag/v1.7.0"
+  "download": "https://github.com/pruhtz/loremat-releases/releases/download/v1.7.1/Loremat-1.7.1.dmg",
+  "sha256": "5d8cb87e95351f4e582068c3978b55f1cd5a932bb896e04e120940b86dc38f30",
+  "notes": "### Hinzugefügt\n\n- Diagnose wird zusätzlich als Datei abgelegt (`~/Library/Logs/Loremat/\n  Diagnose.txt`, nur lokal); der Uninstaller entfernt sie mit.\n- Formular ausfüllen: Diagnose zeigt die Elternkette des Startfelds und je\n  Datumssegment, wie es fokussiert wurde.\n- `make-signing-cert.sh --fix-access` trägt codesign dauerhaft in die\n  Zugriffsliste des Schlüssels ein (sonst hängt codesign in Hintergrund-Shells\n  am Schlüsselbund-Dialog).\n\n### Geändert\n\n- Formular ausfüllen ohne erkennbares `<form>` (Firefox liefert weder\n  AXLandmarkForm noch AXWebArea in der Elternkette): Es wird der engste\n  Bereich um das Feld mit mindestens zwei Feldern bedient – nie mehr das ganze\n  Browserfenster mit Tabs und Seitenleiste.\n- Auswahllisten werden wie von Hand bedient (öffnen, ↓, ↩), wenn ihre Optionen\n  nicht im Accessibility-Baum liegen; Platzhalter wie „--“ gelten nicht mehr\n  als Auswahl. Kein Escape mehr nach der Auswahl (schloss modale Dialoge).\n\n### Behoben\n\n- Datums- und Zeitfelder (`type=date`, `datetime-local`) werden befüllt: Die\n  Segmente werden fokussiert und die Ziffern in Locale-Reihenfolge mit echten\n  Tastencodes getippt; zuvor kamen Unicode-Events (Keycode 0 = „A“) in Firefox\n  nicht an.\n- Formular ausfüllen startete in Firefox mit der ganzen Web-Area als\n  Fokuselement; der Webinhalt gilt jetzt als Grenze.",
+  "notesURL": "https://github.com/pruhtz/loremat-releases/releases/tag/v1.7.1"
 }
