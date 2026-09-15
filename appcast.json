@@ -1,9 +1,9 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "published": "2026-09-15",
   "minSystemVersion": "13.0",
-  "download": "https://github.com/pruhtz/loremat-releases/releases/download/v1.6.0/Loremat-1.6.0.dmg",
-  "sha256": "3753b488007a82bd13cdad60c68c6138ca6386308d62f870d24eeca2fd9d67b1",
-  "notes": "### Hinzugefügt\n\n- In-App-Updater: prüft beim Start (verzögert) und stündlich, ob eine neue\n  Version vorliegt – abschaltbar unter Einstellungen → Allgemein → Updates,\n  jederzeit manuell über „Nach Updates suchen …“. Jede Prüfung lädt eine\n  einzige öffentliche Datei (`appcast.json` aus `pruhtz/loremat-releases`)\n  und sendet keine Kennungen. Neue Versionen werden mit Release-Notes\n  gemeldet und erst auf Klick installiert: DMG laden, SHA-256 prüfen, App\n  ersetzen (alte Version in den Papierkorb), Neustart.\n- `scripts/make-signing-cert.sh`: eigenes Codesigning-Zertifikat, mit dem\n  `build.sh` statt ad hoc signiert – die Bedienungshilfen-Berechtigung bleibt\n  damit über Builds und Updates hinweg erhalten.\n- `scripts/publish-release.sh`: baut DMG, legt das GitHub-Release im\n  öffentlichen Release-Repo an und aktualisiert den Update-Feed.",
-  "notesURL": "https://github.com/pruhtz/loremat-releases/releases/tag/v1.6.0"
+  "download": "https://github.com/pruhtz/loremat-releases/releases/download/v1.7.0/Loremat-1.7.0.dmg",
+  "sha256": "d2c052d76c413176a19841c93df21973088f13b65c13358ad77649ed4736675c",
+  "notes": "### Hinzugefügt\n\n- Menüeintrag „Feedback senden …“: Fenster mit Kategorie (Fehler/Idee/Frage),\n  Nachricht, optionalen Anhängen (System-Info, Diagnose der letzten\n  Einfügung – standardmäßig aus) und Vorschau. „E-Mail-Entwurf öffnen“ legt\n  die Mail im Mail-Programm des Nutzers an; nichts wird im Hintergrund\n  gesendet.\n\n### Geändert\n\n- Installationsanleitung („Bitte lesen.txt“, README) für macOS 15 Sequoia:\n  Gatekeeper lässt sich dort nur noch über Systemeinstellungen → Datenschutz &\n  Sicherheit → „Dennoch öffnen“ passieren, nicht mehr per Rechtsklick → Öffnen.\n\n### Behoben\n\n- Die App ließ sich auf Intel-Macs nicht starten („auf diesem Mac-Typ nicht\n  unterstützt“): Es wurde nur für Apple Silicon kompiliert. `build.sh` baut\n  jetzt ein Universal Binary (arm64 + x86_64).",
+  "notesURL": "https://github.com/pruhtz/loremat-releases/releases/tag/v1.7.0"
 }
